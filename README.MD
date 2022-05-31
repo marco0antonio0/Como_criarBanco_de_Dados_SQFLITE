@@ -2,8 +2,8 @@
 ![ img](https://github.com/marco0antonio0/bot-whatsapp-python/blob/main/imagens/img-post.png?raw=true)
 ## Ferramentas Ultilizadas
 #
-*  Linguagem Flutter Dart
-*  Layout de telas em figma
+*  Linguagem python
+*  biblioteca selenium
 *  Design readme canva
 #
 #   Uso
