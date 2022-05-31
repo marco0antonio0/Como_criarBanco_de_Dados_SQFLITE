@@ -28,4 +28,4 @@ Funções em andamento :
 
 
 #
-![img](imagens/WhatsappBot.png)
+![img](https://github.com/marco0antonio0/bot-whatsapp-python/blob/main/imagens/img_post.png?raw=true)
