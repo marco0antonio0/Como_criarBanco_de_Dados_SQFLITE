@@ -1,1 +1,0 @@
-# Como_criarBanco_de_Dados_SQFLITE
