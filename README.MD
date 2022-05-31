@@ -22,3 +22,4 @@ Funções em andamento :
 
 
 #
+![ img](https://github.com/marco0antonio0/bot-whatsapp-python/blob/main/imagens/img-post.png?raw=true)
