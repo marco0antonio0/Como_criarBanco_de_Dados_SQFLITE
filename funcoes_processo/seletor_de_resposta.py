@@ -1,3 +1,6 @@
+from funcoes_processo.fn_processamento import processamento
+
+
 def passarEtapa(nome,etapa):
   etapasContatos.pop()
   etapasContatos.append([nome,etapa])
@@ -22,21 +25,21 @@ def seletor_de_eventos(nome_contato,lista_mensagens):
         etapa = etapasContatos[i][1]+1
         nome = etapasContatos[i][0]
         status =passarEtapa(nome=nome,etapa=etapa)
-        break
+        return processamento(etapa=0)
       #========================================
       #     Etapa 2
       if 2 == etapasContatos[i][1]:
         etapa = etapasContatos[i][1]+1
         nome = etapasContatos[i][0]
         status =passarEtapa(nome=nome,etapa=etapa)
-        break
+        return processamento(etapa=etapa)
       #========================================
       #     Etapa 3
       if 3 == etapasContatos[i][1]:
         etapa = etapasContatos[i][1]+1
         nome = etapasContatos[i][0]
         status =passarEtapa(nome=nome,etapa=etapa)
-        break
+        return processamento(etapa=5)
       if  3<etapasContatos[i][1]:
         status = False
         print('etapas d++')
@@ -44,7 +47,8 @@ def seletor_de_eventos(nome_contato,lista_mensagens):
 
   if status:
     nome = nome_contato
-    etapa = 1
+    etapa = 0
     etapasContatos.append([nome,etapa])
     print(etapasContatos)
+    return processamento(etapa=0)
   

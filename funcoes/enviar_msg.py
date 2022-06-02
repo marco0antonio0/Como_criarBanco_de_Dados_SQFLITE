@@ -31,7 +31,7 @@ def enviarMensagem(driver,contato,mensagem,opcao):
   #           def enviarMensagem(driver,contato,mensagem,opcao)
   #==================================================================================
   if opcao == 1:
-    time.sleep(2)
+   
     #
     #==============================================================
     #         parte 2
@@ -59,7 +59,7 @@ def enviarMensagem(driver,contato,mensagem,opcao):
     #              Irar selecionar o contato desejado
     #               e irar clicar
     #==============================================================
-    time.sleep(2)
+   
     v = True
     while v:
       try:
@@ -74,7 +74,7 @@ def enviarMensagem(driver,contato,mensagem,opcao):
     #              Irar selecionar o boxMensagem --
     #           Irar escrever a mensagem desejada --
     #============================================================== 
-    time.sleep(2)
+    
     v = True
     while v:
       try:
@@ -103,8 +103,7 @@ def enviarMensagem(driver,contato,mensagem,opcao):
         None
 
 
-    time.sleep(3)
-
+    
     
   #==================================================================================
   #               def enviar_msg_processo(driver,mensagem):
@@ -117,7 +116,7 @@ def enviarMensagem(driver,contato,mensagem,opcao):
     #==============================================================  
     click_box_mensage = existe_box(driver=driver)
     click_box_mensage.click()
-    time.sleep(2)
+    
 
     #==============================================================
     #         parte 6
@@ -125,17 +124,18 @@ def enviarMensagem(driver,contato,mensagem,opcao):
     #           Irar escrever a mensagem desejada --
     #==============================================================
     click_box_mensage.send_keys(mensagem)
-    time.sleep(2)
+    
     #==============================================================
     #         parte 7                              --
     #==============================================================
     #          Irar clicar em enviar mensagem
     #==============================================================
-    time.sleep(2)
+   
     v = True
     while v:
       try:
         btn_envia_mensagem = driver.find_element_by_xpath('//span[@data-icon="send"]')
+        print('to aqui')
         if btn_envia_mensagem !=None:
           btn_envia_mensagem = driver.find_element_by_xpath('//*[@id="main"]/footer/div[1]/div/span[2]/div/div[2]/div[2]/button')
           btn_envia_mensagem.click()
@@ -143,7 +143,7 @@ def enviarMensagem(driver,contato,mensagem,opcao):
         break
       except:
         None
-    time.sleep(3)
+    
 
     
 

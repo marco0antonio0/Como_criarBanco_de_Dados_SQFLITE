@@ -5,7 +5,7 @@ def pergunta_1():
     data = datetime.now()
     #hora = data.strftime('%H:%M')
     apenas_hora = data.strftime('%H')
-
+    apenas_hora = int(apenas_hora)
     if apenas_hora >=6 and apenas_hora<12:
         msg1 = 'bom dia'
     if apenas_hora >=12 and apenas_hora<17:
