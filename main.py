@@ -78,7 +78,8 @@ while verificar_se_tem_msg:
                 lista_mensagens = iniciar_bot.varredura_msg_base(contato=dados[i][1])
                 resposta = seletor_de_eventos(nome_contato=dados[i][1], lista_mensagens=lista_mensagens)
                 # iniciar_bot.enviar_msg_base(contato='',mensagem=resposta,opcao=2)
-
+                # print('passei')
+                time.sleep(1)
                 iniciar_bot.atualizar()
                 japrintei = True
 
