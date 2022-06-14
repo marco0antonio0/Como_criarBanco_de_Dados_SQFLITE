@@ -47,6 +47,7 @@ def enviarMensagem(driver, contato, mensagem, opcao):
         # ==============================================================
         #              irar clicar boxSeach
         # ==============================================================
+        time.sleep(3)
         pesquisar.click()
 
         # ==============================================================
@@ -62,12 +63,12 @@ def enviarMensagem(driver, contato, mensagem, opcao):
         #              Irar selecionar o contato desejado
         #               e irar clicar
         # ==============================================================
-
-       
+        time.sleep(4)
         while True:
             try:
                 procurar_contato = driver.find_element_by_xpath("//span[@title='{}']".format(contato))
                 procurar_contato.click()
+                print('to aqui')
                 break
             except:
                 None
@@ -78,10 +79,12 @@ def enviarMensagem(driver, contato, mensagem, opcao):
         #           Irar escrever a mensagem desejada --
         #            Irar clicar em enviar mensagem --
         # ==============================================================
-
+        time.sleep(3)
         click_box_mensage = existe_box(driver=driver)
         click_box_mensage.click()
+        time.sleep(2)
         click_box_mensage.send_keys(mensagem)
+        time.sleep(3)
         # ==============================================================
         #         parte 7                              --
         # ==============================================================
@@ -91,10 +94,13 @@ def enviarMensagem(driver, contato, mensagem, opcao):
 
         while True:
             try:
+                
                 btn_envia_mensagem = driver.find_element_by_xpath('//span[@data-icon="send"]')
                 if btn_envia_mensagem != None:
                     btn_envia_mensagem = driver.find_element_by_xpath('//*[@id="main"]/footer/div[1]/div/span[2]/div/div[2]/div[2]/button')
                     btn_envia_mensagem.click()
+                    print('procurando btn')
+                    break
                 break
             except:
                 None
@@ -123,8 +129,6 @@ def enviarMensagem(driver, contato, mensagem, opcao):
         # ==============================================================
         #          Irar clicar em enviar mensagem
         # ==============================================================
-
-        v = True
         while True:
             try:
                 btn_envia_mensagem = driver.find_element_by_xpath('//span[@data-icon="send"]')

@@ -36,9 +36,7 @@ class whats:
     def enviar_por_horario(self,contato,horario,mensagem):
         data = datetime.now()
         hora = data.strftime('%H:%M')
-        print(hora)
         if hora == horario:
-            print('passei aqui')
             enviarMensagem(driver=self.driver, contato=contato,mensagem=mensagem, opcao=1)
             time.sleep(1)
             self.driver.refresh()
