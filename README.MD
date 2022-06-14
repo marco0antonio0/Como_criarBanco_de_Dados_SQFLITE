@@ -1,23 +1,31 @@
 #   Bot WhatsApp
 ![ img](https://github.com/marco0antonio0/bot-whatsapp-python/blob/main/imagens/img-post.png?raw=true)
+
 ## Ferramentas Ultilizadas
 #
 *  Linguagem python
 *  biblioteca selenium
 *  Design readme canva
 #
+#   Biblioteca necessarias
+## Biblioteca webdriver_manager
+      pip instalar gerenciador de webdriver
+## Biblioteca Selenium
+      pip instalar selênio
 #   Uso
-Ultilizar funções da pasta main
-* Enviar mensagem para um contato
+###  >>>Dados sobre os dados da sesão do navegador salvo na pasta dados_salvar
+
+Ultilizar o arquivo main.py para editalo e execulado conforme seu necessidade
+* Enviar mensagem para um contato manualmente
 * Enviar mensagem por horarios
 ![ img](https://github.com/marco0antonio0/bot-whatsapp-python/blob/main/imagens/code.png?raw=true)
   
     
-    ### 1=> horario='17:51'                 
-    ### 2=> mensagem='Sua mensagem aqui'    
-    ### 3=> contato='nome do contato como registrado no whatsapp'
-    ### 4=> iniciar_bot.enviar_por_horario(horario =horario,contato=contato,mensagem = mensagem) 
-    ### CAMPO -4- FIXO NÃO ALTERAR
+    ### Line 63 -> horario='17:51'                 
+    ### Line 64 -> mensagem='Sua mensagem aqui'    
+    ### Line 65 -> contato='nome do contato como registrado no whatsapp'
+    ### Line 66 -> iniciar_bot.enviar_por_horario(horario =horario,contato=contato,mensagem = mensagem) 
+    ### ==========> CAMPO -4- FIXO NÃO ALTERAR <==========
 
 #
 ## 🚧 Em andamento 🚧
