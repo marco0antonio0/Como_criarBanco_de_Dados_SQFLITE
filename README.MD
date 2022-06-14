@@ -9,9 +9,9 @@
 #
 #   Biblioteca necessarias
 ## Biblioteca webdriver_manager
-      pip instalar gerenciador de webdriver
+      pip install webdriver-manager
 ## Biblioteca Selenium
-      pip instalar selênio
+      pip install selenium
 #   Uso
 ###  >>>Dados sobre os dados da sesão do navegador salvo na pasta dados_salvar
 
