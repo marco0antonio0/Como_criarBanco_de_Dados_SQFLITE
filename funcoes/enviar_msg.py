@@ -139,6 +139,7 @@ def enviarMensagem(driver,contato,mensagem,opcao):
         if btn_envia_mensagem !=None:
           btn_envia_mensagem = driver.find_element_by_xpath('//*[@id="main"]/footer/div[1]/div/span[2]/div/div[2]/div[2]/button')
           btn_envia_mensagem.click()
+          print('to aqui')
         
         break
       except:

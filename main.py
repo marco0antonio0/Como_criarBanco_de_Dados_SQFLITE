@@ -11,15 +11,18 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 
+
 class whats:
     def __init__(self):
         opt = webdriver.ChromeOptions()
         opt.add_argument('lang=pt-br')
         opt.add_argument('user-data-dir=./dados_salvar')
+        opt.headless = False
         #self.driver = webdriver.Chrome(executable_path='./dados_navegador/chromedriver', options=opt)
 
-        self.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()),options=opt)
-        #self.driver.get("https://www.google.com")
+        self.driver = webdriver.Chrome(service=Service(
+            ChromeDriverManager().install()), options=opt)
+        # self.driver.get("https://www.google.com")
     # =============================================================
 
     def abrirWhatsapp(self):
@@ -32,7 +35,8 @@ class whats:
     # parametros{especificar a mensagem, nome do contato}
 
     def enviar_msg_base(self, contato, mensagem, opcao):
-        enviarMensagem(driver=self.driver, contato=contato,mensagem=mensagem, opcao=opcao)
+        enviarMensagem(driver=self.driver, contato=contato,
+                       mensagem=mensagem, opcao=opcao)
     # =============================================================
     # retorna as mensagens selecionadas
 
@@ -58,11 +62,11 @@ iniciar_bot.abrirWhatsapp()
 #                           inicio do loop
 #
 # ======================================================================================
-operar = True
+operar = False
 esta_procurando_ainda = True
 japrintei = True
-verificar_se_tem_msg = True
-while verificar_se_tem_msg:
+dados = ''
+while True:
     # print(data.strftime('%H:%M:%S'))
     data = datetime.now()
     hora = data.strftime('%H:%M')
@@ -75,10 +79,13 @@ while verificar_se_tem_msg:
         if len(dados) > 0:
             for i in range(len(dados)):
                 # dados[ posiçao_na_lista ][ id, nome, qtd_notificação]
-                lista_mensagens = iniciar_bot.varredura_msg_base(contato=dados[i][1])
-                resposta = seletor_de_eventos(nome_contato=dados[i][1], lista_mensagens=lista_mensagens)
-                iniciar_bot.enviar_msg_base(contato=dados[i][1],mensagem=resposta,opcao=2)
-                # print('passei')
+                lista_mensagens = iniciar_bot.varredura_msg_base(
+                    contato=dados[i][1])
+                resposta = seletor_de_eventos(nome_contato=dados[i][1], msg=(
+                    lista_mensagens[(len(lista_mensagens)-1)].text))
+                iniciar_bot.enviar_msg_base(
+                    contato=dados[i][1], mensagem=resposta, opcao=2)
+                print('passei')
                 time.sleep(1)
                 iniciar_bot.atualizar()
                 japrintei = True
@@ -90,9 +97,11 @@ while verificar_se_tem_msg:
     # ======================================================================================
     #                         Enviar MGS por horarios
     # ======================================================================================
-    # if hora == '21:13':
-    #    iniciar_bot.atualizar()
-    #    iniciar_bot.enviar_msg_base(mensagem='ola,marco',contato='Marco Antônio')
+
+    if hora == '13:27' or True:
+        iniciar_bot.atualizar()
+        iniciar_bot.enviar_msg_base(opcao=1,
+                                    mensagem=f'ola marco são extamente --> {hora}', contato='Marco Antônio')
     # ======================================================================================
     #                                'Procurando'
     # ======================================================================================
