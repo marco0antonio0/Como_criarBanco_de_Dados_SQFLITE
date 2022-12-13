@@ -8,5 +8,5 @@ Desenvolvimento de uma automação web com interface grafica PySimpleGUI para ut
 -   figma
 -   vscode - python
 -   Selenium , PySimpleGUI
-
-<a src=''>ola<a>
+## >> Guia
+<a href="https://github.com/marco0antonio0/bot-whatsapp-python/tree/main/como%20utilizar"> >>>  Como usar?</a>
